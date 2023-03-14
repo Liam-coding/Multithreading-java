@@ -1,4 +1,6 @@
 package threadSignal;
+//https://blog.csdn.net/suifeng3051/article/details/51863010?locationNum=2
+
 
 public class ThreadB extends Thread {
     int count;
