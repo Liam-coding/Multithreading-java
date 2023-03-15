@@ -16,7 +16,7 @@ public class UserTest {
         String deleteEntityStr = "node";
         JsonObject jsonObject = gson.fromJson(userJson, JsonObject.class);
         boolean isSuccess = Optional.ofNullable(jsonObject)
-                .map(o -> jsonObject.get(DATA))
+                .map(o -> o.get(DATA))
                 .map(JsonElement::getAsJsonObject)
                 .map(o -> o.get(deleteEntityStr))
                 .filter(r -> !r.isJsonNull() && r.getAsBoolean())

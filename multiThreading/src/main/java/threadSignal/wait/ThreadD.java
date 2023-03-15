@@ -19,8 +19,8 @@ public class ThreadD extends Thread{
             e.printStackTrace();
         }
         synchronized (mySignal){
-            System.out.println("mySignal is notifying...");
-            mySignal.notify();
+            System.out.println("Thread D is end. mySignal is notifying...");
+            mySignal.notifyAll();
         }
     }
 }
