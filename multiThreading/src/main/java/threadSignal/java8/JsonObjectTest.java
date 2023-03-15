@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
 
 import java.util.Optional;
 
-public class UserTest {
+public class JsonObjectTest {
     static Gson gson = new Gson();
     static String userJson = "{\"data\":{\"node\":true}}";
     private static final String DATA = "data";
