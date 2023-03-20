@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class UserTest {
@@ -22,5 +24,15 @@ public class UserTest {
                 .filter(r -> !r.isJsonNull() && r.getAsBoolean())
                 .isPresent();
         System.out.println(isSuccess);
+
+        Boolean b = false;
+        List<Boolean> booleans = new ArrayList<>();
+        booleans.add(b);
+
+        boolean present = Optional.ofNullable(booleans)
+                .map(item -> item.get(0))
+                .filter(r -> r != null && r)
+                .isPresent();
+        System.out.println(present);
     }
 }
