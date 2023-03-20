@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class UserTest {
+public class JsonObjectTest {
     static Gson gson = new Gson();
     static String userJson = "{\"data\":{\"node\":true}}";
     private static final String DATA = "data";
@@ -18,7 +18,7 @@ public class UserTest {
         String deleteEntityStr = "node";
         JsonObject jsonObject = gson.fromJson(userJson, JsonObject.class);
         boolean isSuccess = Optional.ofNullable(jsonObject)
-                .map(o -> jsonObject.get(DATA))
+                .map(o -> o.get(DATA))
                 .map(JsonElement::getAsJsonObject)
                 .map(o -> o.get(deleteEntityStr))
                 .filter(r -> !r.isJsonNull() && r.getAsBoolean())

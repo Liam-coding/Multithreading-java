@@ -13,7 +13,7 @@ public class ThreadC extends Thread {
     public void run() {
         synchronized (mySignal) {
             try {
-                System.out.println("mySignal is wait...");
+                System.out.println("Thread C mySignal is wait...");
                 mySignal.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -25,8 +25,10 @@ public class ThreadC extends Thread {
     public static void main(String[] args) {
         MonitorObject mySignal = new MonitorObject();
         ThreadD threadD = new ThreadD(mySignal);
+        ThreadE threadE = new ThreadE(mySignal);
         ThreadC threadC = new ThreadC(mySignal,threadD);
         threadC.start();
         threadD.start();
+        threadE.start();
     }
 }
