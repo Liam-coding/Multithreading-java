@@ -1,7 +1,5 @@
 package threadSignal.cancelAndClose;
 
-import static org.junit.Assert.assertFalse;
-
 public class SampleThread extends Thread {
     public int processingCount = 0;
 
